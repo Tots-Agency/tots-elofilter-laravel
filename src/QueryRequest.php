@@ -266,6 +266,31 @@ class QueryRequest
         }
         return $data;
     }
+    /**
+     * Undocumented function
+     *
+     * @param string $with
+     * @return void
+     */
+    public function addWith($with)
+    {
+        $this->withs[] = $with;
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param string $with
+     * @return void
+     */
+    public function removeWith($with)
+    {
+        $this->withs = array_filter($this->withs, function($w) use ($with){
+            if($w != $with){
+                return true;
+            }
+        });
+    }
 
     /**
      * Agregar un order a la query
