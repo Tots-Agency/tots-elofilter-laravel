@@ -2,6 +2,7 @@
 
 namespace Tots\EloFilter;
 
+use Closure;
 use Illuminate\Http\Request;
 
 class Query
@@ -18,6 +19,11 @@ class Query
     protected $modelClass;
 
     public function execute()
+    {
+        return $this->executeWithQuery(null);
+    }
+
+    public function executeWithQuery($closure)
     {
         // Create Eloquent Model
         $query = $this->modelClass::select($this->getTable() .'.*');
@@ -37,6 +43,10 @@ class Query
 
         // Configuramos Relaciones
         $query->with($this->request->getWiths());
+
+        if($closure != null){
+            $closure($query);
+        }
 
         //return $query->paginate($configure->getLimit(), ['*'], 'page', $configure->getPage())
         return $query->paginate($this->getPerPage(), ['*'], 'page', $this->getPage());
