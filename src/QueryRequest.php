@@ -165,6 +165,23 @@ class QueryRequest
     /**
      * Add whereRaw with keys
      *
+     * @param string $query
+     * @param array $values
+     * @param string $key
+     * @return void
+     */
+    public function addWhereRaw($query, $values, $key = '')
+    {
+        $this->wheres[] = FactoryWhere::create(array(
+            'type' => AbstractWhere::TYPE_RAW,
+            'key' => $key,
+            'query' => $query,
+            'values' => $values
+        ));
+    }
+    /**
+     * Add whereRaw with keys
+     *
      * @param array $keys
      * @param mixed $value
      * @return void

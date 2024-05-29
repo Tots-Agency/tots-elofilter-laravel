@@ -25,6 +25,7 @@ class FactoryWhere
         AbstractWhere::TYPE_LESS_THAN => LessThanWhere::class,
         AbstractWhere::TYPE_NULL => NullWhere::class,
         AbstractWhere::TYPE_NOT_NULL => NotNullWhere::class,
+        AbstractWhere::TYPE_RAW => RawWhere::class,
     ];
     /**
      * Create where
