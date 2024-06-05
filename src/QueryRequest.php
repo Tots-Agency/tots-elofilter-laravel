@@ -148,6 +148,22 @@ class QueryRequest
         ));
     }
     /**
+     * 
+     *
+     * @param array $key
+     * @param mixed $value
+     * @return void
+     */
+    public function addWhereBetween($key, $from, $to)
+    {
+        $this->wheres[] = FactoryWhere::create(array(
+            'type' => AbstractWhere::TYPE_BETWEEN,
+            'key' => $key,
+            'from' => $from,
+            'to' => $to
+        ));
+    }
+    /**
      * Add whereRaw with keys
      *
      * @param string $key
