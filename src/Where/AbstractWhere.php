@@ -24,6 +24,7 @@ abstract class AbstractWhere
     const TYPE_LESS_THAN = 'less-than';
     const TYPE_NULL = 'null';
     const TYPE_NOT_NULL = 'not-null';
+    const TYPE_NOT_IN = 'not-in';
     /**
      * Type of where
      *

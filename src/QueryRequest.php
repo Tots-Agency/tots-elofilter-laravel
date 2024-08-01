@@ -211,6 +211,21 @@ class QueryRequest
         ));
     }
     /**
+     * 
+     *
+     * @param array $key
+     * @param mixed $value
+     * @return void
+     */
+    public function addWhereNotIn($key, $value)
+    {
+        $this->wheres[] = FactoryWhere::create(array(
+            'type' => AbstractWhere::TYPE_NOT_IN,
+            'key' => $key,
+            'value' => $value
+        ));
+    }
+    /**
      * Elimina un where del listado
      * @param string $key
      */
