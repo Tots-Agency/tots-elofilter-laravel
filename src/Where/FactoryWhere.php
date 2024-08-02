@@ -26,6 +26,7 @@ class FactoryWhere
         AbstractWhere::TYPE_NULL => NullWhere::class,
         AbstractWhere::TYPE_NOT_NULL => NotNullWhere::class,
         AbstractWhere::TYPE_RAW => RawWhere::class,
+        AbstractWhere::TYPE_NOT_IN => NotInWhere::class
     ];
     /**
      * Create where
