@@ -1,7 +1,7 @@
 {
     "name": "tots/elofilter-laravel",
     "description": "The library for Laravel PHP",
-    "version": "0.0.7",
+    "version": "11.0.2",
     "type": "library",
     "license": "MIT",
     "autoload": {
@@ -18,7 +18,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": "^8.0",
-        "laravel/framework": "^10.10",
-        "illuminate/pagination": "^10.0"
+        "laravel/framework": "^10|^11",
+        "illuminate/pagination": "^10|^11"
     }
 }
